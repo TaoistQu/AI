@@ -25,9 +25,9 @@ key_file={
     'test_label':'t10k-labels-idx1-ubyte.gz'
 }
 
+#为当前目录的绝对路路径
 dataset_dir = os.path.dirname(os.path.abspath(__file__))
 save_file = dataset_dir + "/mnist.pkl"
-
 train_num = 60000
 test_num = 10000
 img_dim = (1,28,28)
