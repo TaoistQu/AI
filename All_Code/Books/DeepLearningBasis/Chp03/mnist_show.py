@@ -7,14 +7,7 @@
 # @File    : mnist_show.py
 # @Software: PyCharm
 
-import os
-import sys
-
 from Books.DeepLearningBasis.dataset import mnist
-
-sys.path.append(os.pardir)  # 为了导入父目录的文件而进行的设定
-
-
 from PIL import Image
 import numpy as np
 def img_show(img):
