@@ -22,7 +22,7 @@ def _numerical_gradient_no_batch(f,x):
         x[idx] = tmp_val - h
         fxh2 = f(x)
 
-        grad = (fxh1- fxh2) / (2*h)
+        grad[idx] = (fxh1- fxh2) / (2*h)
 
         x[idx] = tmp_val
 
@@ -33,11 +33,9 @@ def numerical_gradient(f,x):
         return _numerical_gradient_no_batch(f,x)
     else:
         grad = np.zeros_like(x)
-
         for idx , t in enumerate(x):
             grad[idx] = _numerical_gradient_no_batch(f,t)
-
-    return grad
+        return grad
 
 
 def function_2(x):
@@ -45,7 +43,6 @@ def function_2(x):
         return np.sum(x**2)
     else:
         return np.sum(x**2,axis=1)
-
 
 def tangent_line(f,x):
     d = numerical_gradient(f,x)
