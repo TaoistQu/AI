@@ -81,14 +81,14 @@ class SoftmaxWithLoss:
     def forward(self,x,t):
         self.t = t
         self.y = softmax(x)
-
+        #这里计算的为误差
         self.loss = cross_entropy_error(self.y,self.t)
-
         return self.loss
 
     def backward(self,dout=1):
         batch_size = self.t.shape[0]
         if self.t.size == self.y.size:
+            #将两层合并后推导向前传递的就是 y-t
             dx  = (self.y - self.t) / batch_size
         else:
             dx = self.y.copy()
