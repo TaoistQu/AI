@@ -69,9 +69,9 @@ class AdaGrad:
             for key ,val in params.items():
                 self.h[key] = np.zeros_like(val)
 
-            for key in params.keys():
-                self.h[key] += grads[key] *grads[key]
-                params[key] -= self.lr*grads[key] / (np.sqrt(self.h[key]) + 1e-7)
+        for key in params.keys():
+            self.h[key] += grads[key] *grads[key]
+            params[key] -= self.lr*grads[key] / (np.sqrt(self.h[key]) + 1e-7)
 
 class RMSprop:
 
