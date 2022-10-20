@@ -60,8 +60,8 @@ class MultiLayerNet:
                     指定'relu'或'he'的情况下设定“He的初始值”
                     指定'sigmoid'或'xavier'的情况下设定“Xavier的初始值”
                 """
-        all_size_list = [self.input_size]+self.hidden_size_list+[self.output_size]
-        for idx in range(1,len(all_size_list)):
+        all_size_list = [self.input_size]+ self.hidden_size_list + [self.output_size]
+        for idx in range(1, len(all_size_list)):
             scale = weight_init_std
             if str(weight_init_std).lower() in ('relu','he'):
                 scale = np.sqrt(2.0 / all_size_list[idx -1])
@@ -70,7 +70,7 @@ class MultiLayerNet:
                 scale = np.sqrt(1.0 / all_size_list[idx - 1])
 
             self.params['W' +str(idx)] = scale * np.random.randn(all_size_list[idx-1],all_size_list[idx])
-            self.params['b'+str(idx)]  = np.zeros(all_size_list[idx])
+            self.params['b'+str(idx)] = np.zeros(all_size_list[idx])
 
     def predict(self,x):
         for layer in self.layers.values():
