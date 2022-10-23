@@ -20,7 +20,7 @@ train_size = x_train.shape[0]
 batch_size = 128
 max_iterations = 2000
 
-weight_init_types ={'std=0.01':0.01,'Xavier':0.005,'He':0.003}
+weight_init_types ={'std=0.01':0.01,'Xavier':'sigmoid','He':'relu'}
 
 optimizer = SGD(lr=0.01)
 

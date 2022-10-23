@@ -63,11 +63,11 @@ class MultiLayerNet:
         all_size_list = [self.input_size]+ self.hidden_size_list + [self.output_size]
         for idx in range(1, len(all_size_list)):
             scale = weight_init_std
-            if str(weight_init_std).lower() in ('relu','he'):
-                scale = np.sqrt(2.0 / all_size_list[idx -1])
 
-            elif str(weight_init_std).lower() in ('sigmod','xavier'):
-                scale = np.sqrt(1.0 / all_size_list[idx - 1])
+            if str(weight_init_std).lower() in ('relu', 'he'):
+                scale = np.sqrt(2.0 / all_size_list[idx - 1])  # 使用ReLU的情况下推荐的初始值
+            elif str(weight_init_std).lower() in ('sigmoid', 'xavier'):
+                scale = np.sqrt(1.0 / all_size_list[idx - 1])  # 使用sigmoid的情况下推荐的初始值
 
             self.params['W' +str(idx)] = scale * np.random.randn(all_size_list[idx-1],all_size_list[idx])
             self.params['b'+str(idx)] = np.zeros(all_size_list[idx])
