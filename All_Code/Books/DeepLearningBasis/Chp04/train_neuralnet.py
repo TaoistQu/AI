@@ -10,7 +10,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from Books.DeepLearningBasis.dataset.mnist import load_mnist
+import os
+import sys
+
+from dataset.mnist import load_mnist
 from two_layer_net import TowLayerNet
 
 (x_train,t_train),(x_test,t_test) = load_mnist(normalize=True,one_hot_label=True)

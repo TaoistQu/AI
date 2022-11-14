@@ -6,10 +6,11 @@
 # @Email   : qulei_20180331@163.com
 # @File    : multi_layer_net.py
 # @Software: PyCharm
-
+import os
+import sys
 from collections import OrderedDict
-from Books.DeepLearningBasis.common.layers import *
-from Books.DeepLearningBasis.common.gradient import numerical_gradient
+from common.layers import *
+from common.gradient import numerical_gradient
 
 class MultiLayerNet:
     """全连接的多层神经网络
@@ -84,6 +85,7 @@ class MultiLayerNet:
         weight_decay = 0
         for idx in range(1,self.hidden_layer_num+2):
             W = self.params['W'+str(idx)]
+            #加L2范数
             weight_decay += 0.5*self.weight_decay_lambda*np.sum(W**2)
 
         return self.last_layer.forward(y,t) + weight_decay

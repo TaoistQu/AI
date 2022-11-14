@@ -6,12 +6,13 @@
 # @Email   : qulei_20180331@163.com
 # @File    : weight_init_compare.py
 # @Software: PyCharm
-
+import os
+import sys
 import matplotlib.pyplot as plt
-from Books.DeepLearningBasis.dataset.mnist import load_mnist
-from Books.DeepLearningBasis.common.util import smooth_curve
-from Books.DeepLearningBasis.common.multi_layer_net import MultiLayerNet
-from Books.DeepLearningBasis.common.optimizer import SGD
+from dataset.mnist import load_mnist
+from common.util import smooth_curve
+from common.multi_layer_net import MultiLayerNet
+from common.optimizer import SGD
 import numpy as np
 
 (x_train,t_train),(x_test,t_test) = load_mnist(normalize=True)

@@ -6,11 +6,12 @@
 # @Email   : qulei_20180331@163.com
 # @File    : multi_layer_net_extend.py
 # @Software: PyCharm
-
+import os
+import sys
 from collections import OrderedDict
 import numpy as np
-from Books.DeepLearningBasis.common.layers import *
-from Books.DeepLearningBasis.common.gradient import numerical_gradient
+from common.layers import *
+from common.gradient import numerical_gradient
 
 class MultiLayerNetExtend:
     def __init__(self,input_size,hidden_size_list,output_size,

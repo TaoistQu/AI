@@ -6,10 +6,11 @@
 # @Email   : qulei_20180331@163.com
 # @File    : overfit_weight_decay.py
 # @Software: PyCharm
-
-from Books.DeepLearningBasis.dataset.mnist import load_mnist
-from Books.DeepLearningBasis.common.multi_layer_net import MultiLayerNet
-from Books.DeepLearningBasis.common.optimizer import SGD
+import os
+import sys
+from dataset.mnist import load_mnist
+from common.multi_layer_net import MultiLayerNet
+from common.optimizer import SGD
 import numpy as np
 import matplotlib.pyplot as plt
 

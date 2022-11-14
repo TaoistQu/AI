@@ -7,9 +7,11 @@
 # @File    : gradient_simplenet.py
 # @Software: PyCharm
 import numpy as np
+import os
+import sys
 
-from Books.DeepLearningBasis.common.gradient import numerical_gradient
-from Books.DeepLearningBasis.common.functions import softmax, cross_entropy_error
+from common.gradient import numerical_gradient
+from common.functions import softmax, cross_entropy_error
 
 
 class simpleNet:

@@ -6,9 +6,10 @@
 # @Email   : qulei_20180331@163.com
 # @File    : neuralnet_mnist.py
 # @Software: PyCharm
-
-from Books.DeepLearningBasis.dataset import mnist
-from Books.DeepLearningBasis.common import functions
+import os
+import sys
+from dataset import mnist
+from common import functions
 import numpy as np
 import pickle
 

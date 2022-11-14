@@ -7,9 +7,10 @@
 # @File    : two_layer_net.py
 # @Software: PyCharm
 import numpy as np
-
-from Books.DeepLearningBasis.common.functions import *
-from Books.DeepLearningBasis.common.gradient import numerical_gradient
+import os
+import sys
+from common.functions import *
+from common.gradient import numerical_gradient
 
 class TowLayerNet:
     def __init__(self,input_size,hidden_size,output_size,weight_init_std=0.01):

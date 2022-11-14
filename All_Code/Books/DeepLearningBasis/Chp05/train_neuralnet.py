@@ -6,8 +6,9 @@
 # @Email   : qulei_20180331@163.com
 # @File    : train_neuralnet.py
 # @Software: PyCharm
-
-from Books.DeepLearningBasis.dataset.mnist import load_mnist
+import os
+import sys
+from dataset.mnist import load_mnist
 from two_layer_net import TwoLayerNet
 import numpy as np
 

@@ -6,11 +6,12 @@
 # @Email   : qulei_20180331@163.com
 # @File    : optimizer_compare_naive.py
 # @Software: PyCharm
-
+import os
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import OrderedDict
-from Books.DeepLearningBasis.common.optimizer import *
+from common.optimizer import *
 
 def f(x,y):
     return x**2 /20.0 + y**2

@@ -6,8 +6,9 @@
 # @Email   : qulei_20180331@163.com
 # @File    : mnist_show.py
 # @Software: PyCharm
-
-from Books.DeepLearningBasis.dataset import mnist
+import os
+import sys
+from dataset import mnist
 from PIL import Image
 import numpy as np
 def img_show(img):

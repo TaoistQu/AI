@@ -6,8 +6,10 @@
 # @Email   : qulei_20180331@163.com
 # @File    : layers.py
 # @Software: PyCharm
+import os
+import sys
 import numpy as np
-from Books.DeepLearningBasis.common.functions import *
+from common.functions import *
 
 class Relu:
     def __init__(self):

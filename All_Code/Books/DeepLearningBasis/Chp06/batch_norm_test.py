@@ -6,12 +6,13 @@
 # @Email   : qulei_20180331@163.com
 # @File    : batch_norm_test.py
 # @Software: PyCharm
-
+import os
+import sys
 import numpy as np
 import matplotlib.pyplot as plt
-from Books.DeepLearningBasis.dataset.mnist import load_mnist
-from Books.DeepLearningBasis.common.multi_layer_net_extend import MultiLayerNetExtend
-from Books.DeepLearningBasis.common.optimizer import SGD
+from dataset.mnist import load_mnist
+from common.multi_layer_net_extend import MultiLayerNetExtend
+from common.optimizer import SGD
 (x_train,t_train),(x_test,t_test) = load_mnist(normalize=True)
 
 x_train = x_train[:1000]

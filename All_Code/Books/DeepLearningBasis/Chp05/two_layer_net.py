@@ -6,9 +6,10 @@
 # @Email   : qulei_20180331@163.com
 # @File    : two_layer_net.py
 # @Software: PyCharm
-
-from Books.DeepLearningBasis.common.layers import *
-from Books.DeepLearningBasis.common.gradient import numerical_gradient
+import os
+import sys
+from common.layers import *
+from common.gradient import numerical_gradient
 from collections import OrderedDict
 import numpy as np
 
