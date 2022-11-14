@@ -6,8 +6,8 @@
 # @Email   : qulei_20180331@163.com
 # @File    : batch_norm_test.py
 # @Software: PyCharm
-import os
-import sys
+import os,sys
+sys.path.append(os.pardir)
 import numpy as np
 import matplotlib.pyplot as plt
 from dataset.mnist import load_mnist
