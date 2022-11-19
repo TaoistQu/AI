@@ -6,3 +6,26 @@
 # @Email   : qulei_20180331@163.com
 # @File    : ifft.py
 # @Software: PyCharm
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+
+o = cv2.imread("D:\MyCode\AI\opencv\images\lp.bmp")
+f = np.fft.fft2(o)
+
+fshift = np.fft.fftshift(f)
+ishift = np.fft.ifftshift(fshift)
+
+io=np.fft.ifft2(ishift)
+io = np.abs(io)
+
+plt.subplot(121)
+plt.imshow(o,cmap='gray')
+plt.title('origin')
+plt.axis('off')
+
+plt.subplot(122)
+plt.imshow(io.astype('uint8'),cmap='gray')
+plt.title('result')
+plt.axis('off')
+plt.show()
