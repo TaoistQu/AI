@@ -10,7 +10,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
-o = cv2.imread("D:\MyCode\AI\opencv\images\lp.bmp")
+o = cv2.imread('D:\MyCode\AI\opencv\images\lp.bmp')
 f = np.fft.fft2(o)
 
 fshift = np.fft.fftshift(f)
