@@ -20,4 +20,5 @@ knn.fit(X_train,y_train)
 y_pre = knn.predict(X_test)
 acc = (y_test == knn.predict(X_test)).mean()
 print(knn.score(X_test,y_test))
+display(acc)
 
