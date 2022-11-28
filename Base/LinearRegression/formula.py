@@ -9,6 +9,7 @@
 import numpy as np
 from sklearn.linear_model import LinearRegression
 
+'''$$\theta = (X^TX)^{-1}X^Ty$$'''
 x = np.linspace(0,12,20)+np.random.randn(20)
 y = np.linspace(2,12,20)+np.random.randn(20)
 ones = np.ones(shape=(20,1))
