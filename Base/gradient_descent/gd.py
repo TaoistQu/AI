@@ -17,6 +17,7 @@ eta = 0.8
 #最优解 初始化随机给个值
 theta = 15
 last_theta = theta + 0.1
+thetas = []
 '''
 for i in range(50):
     theta = theta -eta * g(theta)
@@ -27,4 +28,12 @@ while True:
         break
     last_theta = theta
     theta = theta -eta *g(theta)
-    print(theta)
+    thetas.append(theta)
+
+x = np.linspace(-6,16,100)
+y = f(x)
+plt.figure(figsize=(9,6))
+plt.plot(x,y)
+thetas = np.array(thetas)
+plt.scatter(thetas,f(thetas),color='red')
+plt.show()
