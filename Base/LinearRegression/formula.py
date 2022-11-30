@@ -15,7 +15,7 @@ y = np.linspace(2,12,20)+np.random.randn(20)
 ones = np.ones(shape=(20,1))
 X = np.hstack((ones,x.reshape(-1,1)))
 
-selt = np.linalg.inv(np.dot(X.T,X))@X.T@y
+selt = np.linalg.inv((X.T).dot(X)).dot(X.T).dot(y)
 print(selt)
 
 linear = LinearRegression()
