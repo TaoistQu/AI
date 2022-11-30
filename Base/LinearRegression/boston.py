@@ -12,14 +12,22 @@ import pandas as pd
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+from sklearn import datasets
 
-data_url = "http://lib.stat.cmu.edu/datasets/boston"
-raw_df = pd.read_csv(data_url, sep="\s+", skiprows=22, header=None)
-print(raw_df.iloc)
-data = np.hstack([raw_df.values[::2, :], raw_df.values[1::2, :2]])
-target = raw_df.values[1::2, 2]
+boston = datasets.load_boston()
+data = boston['data']
+target = boston['target']
 
-X_train,X_test,y_train,y_test = train_test_split(data,target)
+
+X_train,X_test,y_train,y_test = train_test_split(data,target,test_size=50)
+
+mode = LinearRegression(fit_intercept=True)
+mode.fit(X_train,y_train)
+y_ = mode.predict(X_train)
+print(y_[:5])
+print(y_test[:5])
+print(mode.score(X_train,y_train))
+
 
 
 
