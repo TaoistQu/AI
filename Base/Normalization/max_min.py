@@ -7,6 +7,7 @@
 # @File    : max_min.py
 # @Software: PyCharm
 import numpy as np
+from sklearn.preprocessing import MinMaxScaler
 
 X_1 = np.random.randint(1,10,size=10)
 X_2 = np.random.randint(100,300,size=10)
@@ -16,6 +17,10 @@ print('归一化前的数据：')
 print(X)
 X_min = X.min(axis=0)
 X_max = X.max(axis=0)
-X = (X - X_min) / (X_max - X_min)
+#X = (X - X_min) / (X_max - X_min)
 
 print(X)
+
+scaler = MinMaxScaler()
+y = scaler.fit_transform(X)
+print(y)
