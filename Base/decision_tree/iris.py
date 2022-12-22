@@ -7,6 +7,7 @@
 # @File    : iris.py
 # @Software: PyCharm
 # description:
+
 from sklearn.datasets import load_iris
 from sklearn.tree import DecisionTreeClassifier
 from sklearn import tree
@@ -17,6 +18,6 @@ clf = DecisionTreeClassifier()
 clf_iris = clf.fit(iris.data, iris.target)
 
 # 将决策树的结构数据导出
-dot_data = tree.export_graphviz(clf, out_file = 'D:\MyCode\AI\Base\decision_tree\iris')
-graph = graphviz.Source.from_file('D:\MyCode\AI\Base\decision_tree\iris')
-graph.render('D:\MyCode\AI\Base\decision_tree\iris',format='pdf')# 保存到文件中
+dot_data = tree.export_graphviz(clf, out_file = 'D:\MyCode\AI\Base\image\iris')
+graph = graphviz.Source.from_file('D:\MyCode\AI\Base\image\iris')
+graph.render('D:\MyCode\AI\Base\image\iris',format='pdf')# 保存到文件中

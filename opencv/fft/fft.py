@@ -6,6 +6,8 @@
 # @Email   : qulei_20180331@163.com
 # @File    : fft.py
 # @Software: PyCharm
+import os,sys
+sys.path.append(os.pardir)
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
