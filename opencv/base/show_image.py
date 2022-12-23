@@ -15,8 +15,8 @@ from utils.utils import cv_show
 import matplotlib.pyplot as plt
 import cv2
 
-path = os.path.abspath('..\images')
-cat = cv2.imread(os.path.join(path,'.\cat.jpeg'))
+path = os.path.abspath('../images')
+cat = cv2.imread(os.path.join(path,'./cat.jpeg'))
 # 发现matplotlib显示的图片和真实的图片颜色不一样. 因为opencv读进来的图片数据的通道不是默认的RGB
 # 而是BGR, 所以一般opencv读进来的图片不用要别方式去展示比如matplotlib
 # 用opencv自己的方式去展示就没有问题.
