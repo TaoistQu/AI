@@ -7,12 +7,14 @@
 # @File    : save_image.py
 # @Software: PyCharm
 # description:
+import os.path
 import cv2
 
 cv2.namedWindow('img',cv2.WINDOW_NORMAL)
 cv2.resizeWindow('img',640,480)
 
-img = cv2.imread('D:\MyCode\AI\opencv\images\cat.jpeg')
+path = os.path.abspath('..\images')
+img = cv2.imread(os.path.join(path,'.\cat.jpeg'))
 
 while True:
     cv2.imshow('img',img)
@@ -21,7 +23,7 @@ while True:
     if key == ord('q'):
         break
     elif key == ord('s'):
-        cv2.imwrite('123.png',img)
+        cv2.imwrite(os.path.join(path,'.\cat123.png'),img)
     else:
         print(key)
 
