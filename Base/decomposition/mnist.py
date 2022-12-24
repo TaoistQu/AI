@@ -13,7 +13,9 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.decomposition import PCA
-data = pd.read_csv('D:\MyCode\AI\Base\data\digits.csv')
+import os
+path  = os.path.abspath('../data')
+data = pd.read_csv(os.path.join(path,'.\digits.csv'))
 
 y = data['label'].values
 X = data.iloc[:,1:]
