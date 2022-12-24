@@ -48,5 +48,37 @@ for col in columns:
             condition[col] = split
 print('最佳分裂条件是：',condition)
 
+#继续裂分
+
+columns = ['日志密度','真实头像']
+
+lower_entropy = 1
+condition = {}
+cond = X['好友密度'] <= 0.5
+X = X[cond]
+
+for col in columns:
+    x = X[col].unique()
+    x.sort()
+
+    for i in range(len(x) - 1):
+        split = x[i:i+2].mean()
+        cond = X[col] <= split
+        p = cond.value_counts() / cond.size
+        indexes = p.index
+        entropy = 0
+        for index in indexes:
+            user = X[cond == index]['真实用户']
+            p_user = user.value_counts() / user.size
+            entropy += (p_user *np.log2(1/p_user)).sum()*p[index]
+        print(col,split,entropy)
+        if entropy < lower_entropy:
+            condition.clear()
+            lower_entropy = entropy
+            condition[col] = split
+print('最佳裂分条件是:',condition)
+
+
+
 
 
