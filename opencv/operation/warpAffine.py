@@ -20,7 +20,10 @@ path = os.path.abspath('../images')
 dog = cv2.imread(os.path.join(path,'./dog.jpeg'))
 
 h, w, ch = dog.shape
-M = np.float32([[1,0,100],[0,1,0]])
+#M = np.float32([[1,0,100],[0,1,0]])
+#M = cv2.getRotationMatrix2D((w/2,h/2),15,1.0)
+M = cv2.getRotationMatrix2D((100, 100), 45, 1.0)
+
 
 # 平移操作
 # 注意opencv中是先宽度, 后高度.
