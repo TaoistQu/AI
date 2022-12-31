@@ -17,7 +17,7 @@ import numpy as np
 
 path = os.path.abspath('../images')
 
-dog = cv2.imread(os.path.join(path,'./dog.jpeg'))
+dog = cv2.imread(os.path.join(path, '../images/dog.jpeg'))
 print(dog.shape)
 dst = np.zeros((499,360))
 new_dog = cv2.rotate(dog, cv2.ROTATE_90_CLOCKWISE, dst)
