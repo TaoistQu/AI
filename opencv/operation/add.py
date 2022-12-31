@@ -9,22 +9,24 @@
 # description:
 import os
 import cv2
+import numpy as np
 
 path = os.path.abspath('../images')
 
 cat = cv2.imread(os.path.join(path,'./cat.jpeg'))
 dog = cv2.imread(os.path.join(path,'./dog.jpeg'))
-cat = cat[:360,:499]
+#cat = cat[:360,:499]
+cat = cv2.resize(cat,(499,360))
 
-#new_img = cv2.add(cat,dog)
+new_img = cv2.add(cat,dog)
 #new_img = cv2.multiply(cat,dog)
 #new_img = cv2.subtract(cat,dog)
-new_img = cv2.divide(cat,dog)
+#new_img = cv2.divide(cat,dog)
 
-cv2.imshow('dog',dog)
-cv2.imshow('cat',cat)
+#cv2.imshow('dog',dog)
+#cv2.imshow('cat',cat)
 
-cv2.imshow('new_img',new_img)
+cv2.imshow('new_img',np.hstack((new_img,cat,dog)))
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()
