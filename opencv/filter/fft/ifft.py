@@ -9,8 +9,11 @@
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
-o = cv2.imread('D:\MyCode\AI\opencv\images\lp.bmp')
+path = os.path.abspath('../../images')
+
+o = cv2.imread(os.path.join(path,'./lp.bmp'))
 f = np.fft.fft2(o)
 
 fshift = np.fft.fftshift(f)

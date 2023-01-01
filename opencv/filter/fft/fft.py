@@ -11,8 +11,11 @@ sys.path.append(os.pardir)
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
-o = cv2.imread("D:\MyCode\AI\All_Code\opencv\images\lena.bmp",0)
+path = os.path.abspath('../../images')
+
+o = cv2.imread(os.path.join(path,".\lena.bmp"),0)
 
 
 f = np.fft.fft2(o)

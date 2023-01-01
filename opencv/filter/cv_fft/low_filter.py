@@ -4,13 +4,15 @@
 # @Time    : 2022/11/22 1:19
 # @Author  : TaoistQu
 # @Email   : qulei_20180331@163.com
-# @File    : lfilter.py
+# @File    : low_filter.py
 # @Software: PyCharm
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
+import os
 
-img = cv2.imread("D:\MyCode\AI\opencv\images\lp1.jpg",0)
+path = os.path.abspath('../../images')
+img = cv2.imread(os.path.join(path,"./lp1.jpg"), 0)
 dft = cv2.dft(np.float32(img),flags=cv2.DFT_COMPLEX_OUTPUT)
 dftShift = np.fft.fftshift(dft)
 rows,cols= img.shape

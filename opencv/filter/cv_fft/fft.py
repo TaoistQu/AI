@@ -10,7 +10,7 @@ import numpy as np
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread("D:\MyCode\AI\opencv\images\lena.bmp",0)
+img = cv2.imread("/images/lena.bmp", 0)
 dft = cv2.dft(np.float32(img),flags=cv2.DFT_COMPLEX_OUTPUT)
 dftShift = np.fft.fftshift(dft)
 
