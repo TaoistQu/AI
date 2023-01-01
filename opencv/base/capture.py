@@ -11,7 +11,7 @@
 import cv2
 
 cv2.namedWindow('video',cv2.WINDOW_NORMAL)
-cv2.resizeWindow('video',640,480)
+cv2.resizeWindow('video', 640, 480)
 
 cap = cv2.VideoCapture(0)
 
