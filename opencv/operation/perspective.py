@@ -19,7 +19,7 @@ path = os.path.abspath('../images')
 img = cv2.imread(os.path.join(path, './123.png'))
 
 '''
-warpPerspective(img, M,  dsize,....)
+warpPerspective(img, M, dsize,....)
 对于透视变换来说, M是一个3 * 3 的矩阵.
  getPerspectiveTransform(src, dst) 获取透视变换的变换矩阵, 需要4个点, 即图片的4个角. 
 '''
@@ -30,11 +30,12 @@ M = cv2.getPerspectiveTransform(src, dst)
 new_img = cv2.warpPerspective(img, M, (2300, 3000))
 
 cv2.namedWindow('img',cv2.WINDOW_NORMAL)
-cv2.resizeWindow('img', 480,640)
-cv2.imshow('img',img)
+cv2.resizeWindow('img', 480, 640)
+cv2.imshow('img', img)
+cv2.imwrite(os.path.join(path,'math.png'), new_img)
 
-cv2.namedWindow('new_img',cv2.WINDOW_NORMAL)
-cv2.resizeWindow('new_img',480,640)
+cv2.namedWindow('new_img', cv2.WINDOW_NORMAL)
+cv2.resizeWindow('new_img', 480, 640)
 cv2.imshow('new_img',new_img)
 
 cv2.waitKey(0)
