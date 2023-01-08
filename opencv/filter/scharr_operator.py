@@ -14,13 +14,14 @@ import numpy as np
 
 path = os.path.abspath('../images')
 
-img = cv2.imread(os.path.join(path,'lena_color.png'))
+#img = cv2.imread(os.path.join(path, 'lena_color.png'))
+img = cv2.imread(os.path.join(path, '8841.jpg'))
 
 dx = cv2.Scharr(img, -1, dx=1, dy=0)
 dy = cv2.Scharr(img, -1, dx=0, dy=1)
 new_img = cv2.add(dx, dx)
 
-cv2.imshow('img',np.hstack((img,new_img)))
+cv2.imshow('img', np.hstack((img, new_img)))
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

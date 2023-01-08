@@ -22,7 +22,7 @@ import numpy as np
 
 path = os.path.abspath('../images')
 
-dog = cv2.imread(os.path.join(path,'./dog.jpeg'))
+dog = cv2.imread(os.path.join(path, './dog.jpeg'))
 
 # kernel = np.ones((3, 3), np.float32) / 9
 

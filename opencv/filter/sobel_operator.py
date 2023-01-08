@@ -15,15 +15,16 @@ import cv2
 
 path = os.path.abspath('../images')
 
-chess = cv2.imread(os.path.join(path,'chess.png'))
+#chess = cv2.imread(os.path.join(path,'chess.png'))
+chess = cv2.imread(os.path.join(path, '8841.jpg'))
 
 dx = cv2.Sobel(chess, cv2.CV_64F, dx=1, dy=0, ksize=3)
 dy = cv2.Sobel(chess, cv2.CV_64F, dx=0, dy=1, ksize=3)
 
 new_img = cv2.add(dx, dy)
 
-cv2.imshow('img',np.hstack((dx,dy)))
-cv2.imshow('new_img', np.hstack((chess,new_img)))
+cv2.imshow('img', np.hstack((dx, dy)))
+cv2.imshow('new_img', np.hstack((chess, new_img)))
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 

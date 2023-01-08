@@ -29,14 +29,14 @@ M = cv2.getPerspectiveTransform(src, dst)
 
 new_img = cv2.warpPerspective(img, M, (2300, 3000))
 
-cv2.namedWindow('img',cv2.WINDOW_NORMAL)
+cv2.namedWindow('img', cv2.WINDOW_NORMAL)
 cv2.resizeWindow('img', 480, 640)
 cv2.imshow('img', img)
 cv2.imwrite(os.path.join(path,'math.png'), new_img)
 
 cv2.namedWindow('new_img', cv2.WINDOW_NORMAL)
 cv2.resizeWindow('new_img', 480, 640)
-cv2.imshow('new_img',new_img)
+cv2.imshow('new_img', new_img)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

@@ -13,7 +13,7 @@ import numpy as np
 
 path = os.path.abspath('../images')
 
-dog = cv2.imread(os.path.join(path,'./dog.jpeg'))
+dog = cv2.imread(os.path.join(path, './dog.jpeg'))
 logo = np.zeros((200, 200, 3), np.uint8)
 #绘制logo
 logo[20:120, 20:120] = [0, 0, 255]
@@ -31,7 +31,7 @@ roi = dog[:200, :200]
 # roi与m进行与操作, 先roi和roi做与运算, 然后结果再和mask做与运算,
 # 如果与的结果是True, 那么返回原图的像素, 否则返回0
 tmp = cv2.bitwise_and(roi, roi, mask=m)
-dst = cv2.add(tmp,logo)
+dst = cv2.add(tmp, logo)
 cv2.imshow('tmp', tmp)
 cv2.imshow('dog1', dog)
 dog[:200,:200] = dst

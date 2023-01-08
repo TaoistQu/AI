@@ -17,7 +17,7 @@ import os
 
 path = os.path.abspath('../images')
 
-dog = cv2.imread(os.path.join(path,'./dog.jpeg'))
+dog = cv2.imread(os.path.join(path, './dog.jpeg'))
 
 h, w, ch = dog.shape
 '''
@@ -43,12 +43,12 @@ getAffineTransform(src[], dst[]) 通过三点可以确定变换后的位置,
 src = np.float32([[200, 100], [300, 100], [200, 300]])
 dst = np.float32([[100, 150], [360, 200], [280, 120]])
 
-M = cv2.getAffineTransform(src,dst)
+M = cv2.getAffineTransform(src, dst)
 
-new_dog = cv2.warpAffine(dog, M, dsize=(w,h))
+new_dog = cv2.warpAffine(dog, M, dsize=(w, h))
 
-cv2.imshow('dog',dog)
-cv2.imshow('new_dog',new_dog)
+cv2.imshow('dog', dog)
+cv2.imshow('new_dog', new_dog)
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

@@ -19,7 +19,7 @@ print(dog.shape)
 
 # 不用手动创建卷积核, 只需要告诉方盒滤波, 卷积核的大小是多少.
 
-dst = cv2.boxFilter(dog, -1, (3,3),normalize=True)
+dst = cv2.boxFilter(dog, -1, (3, 3), normalize=True)
 
 cv2.imshow('dst', np.hstack((dog, dst)))
 cv2.waitKey(0)

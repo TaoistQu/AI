@@ -16,10 +16,10 @@ import numpy as np
 import os
 
 path = os.path.abspath('../images')
-dog = cv2.imread(os.path.join(path,'./dog.jpeg'))
+dog = cv2.imread(os.path.join(path, './dog.jpeg'))
 
-new_dog = cv2.flip(dog,1)
+new_dog = cv2.flip(dog, 1)
 
-cv2.imshow('img',np.hstack((dog,new_dog)))
+cv2.imshow('img', np.hstack((dog, new_dog)))
 cv2.waitKey(0)
 cv2.destroyAllWindows()

@@ -14,9 +14,9 @@ import cv2
 
 path = os.path.abspath('../images')
 
-img = cv2.imread(os.path.join(path,'lena_color.png'))
+img = cv2.imread(os.path.join(path, 'lena_color.png'))
 new_img = cv2.Canny(img, 100, 200)
-img1 = cv2.Canny(img,64,128)
+img1 = cv2.Canny(img, 64, 128)
 
 cv2.imshow('img', np.hstack((img1, new_img)))
 #cv2.imshow('img',new_img)

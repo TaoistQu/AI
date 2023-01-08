@@ -21,10 +21,10 @@ print(sigma)
 
 path = os.path.abspath('../images')
 
-img = cv2.imread(os.path.join(path,'./lena_color.png'))
+img = cv2.imread(os.path.join(path, './lena_color.png'))
 
-new_img = cv2.GaussianBlur(img, (3,3), sigmaX=100)
-cv2.imshow('img', np.hstack((img,new_img)))
+new_img = cv2.GaussianBlur(img, (3, 3), sigmaX=100)
+cv2.imshow('img', np.hstack((img, new_img)))
 
 cv2.waitKey(0)
 cv2.destroyAllWindows()

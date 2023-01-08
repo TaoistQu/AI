@@ -12,7 +12,7 @@ import os
 import cv2
 
 path = os.path.abspath('../images')
-img = cv2.imread(os.path.join(path, 'dog.jpeg'))
+img = cv2.imread(os.path.join(path, '8841.jpg'))
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
 #返回两个结果，一个阈值，另一个处理后的图片
