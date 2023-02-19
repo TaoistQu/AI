@@ -2,10 +2,11 @@ import keras
 from keras.layers import Dense
 import tensorflow as tf
 import matplotlib.pyplot as plt
-from keras.datasets import mnist
+#from keras.datasets import mnist
+from keras.datasets import fashion_mnist
 import numpy as np
 
-(x_train,y_train),(x_test,y_test) = mnist.load_data()
+(x_train,y_train),(x_test,y_test) = fashion_mnist.load_data()
 
 print(x_train.shape)
 
