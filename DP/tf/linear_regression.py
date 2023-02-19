@@ -6,7 +6,7 @@ from sklearn.linear_model import LinearRegression
 import tensorflow as tf
 
 
-
+#数据加载
 x = np.linspace(0, 10, 20) + np.random.randn(20)
 #x = np.linspace(0, 10, 20)
 y = np.linspace(0, 10, 20) + np.random.randn(20)
@@ -24,6 +24,7 @@ plt.scatter(x, y, c='g')
 plt.plot(x_test, y_test, c='r')
 plt.show()
 
+#初始化参数
 W = tf.Variable(np.random.randn()*0.01)
 B = tf.Variable(0.)
 
