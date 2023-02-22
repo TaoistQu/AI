@@ -1,3 +1,11 @@
+# !/usr/bin/env python3.8
+# -*- coding:utf-8 -*-
+# @FileName  :dropout.py
+# @Time      :2023/2/22 下午11:40
+# @Author    :TaoistQu
+# Email      :qulei_20180331@163.com
+# description: l1 L2 正则
+
 import keras
 import tensorflow as tf
 
@@ -9,7 +17,7 @@ from keras.datasets import mnist
 from keras.layers import Dense
 from sklearn.preprocessing import StandardScaler
 
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
+(X_train, y_train),(X_test, y_test) = mnist.load_data()
 
 X_train = X_train.reshape(-1, 784) / 255.0
 X_test = X_test.reshape(-1, 784) / 255.0
@@ -33,8 +41,9 @@ y_test = tf.keras.utils.to_categorical(y_test, 10)
 #定义网络
 
 model = keras.Sequential()
-model.add(Dense(64, activation='relu', input_shape=(784,)))
-model.add(Dense(64, activation='relu'))
+#加正则
+model.add(Dense(64, activation='relu', kernel_regularizer='l1_l2', input_shape=(784,)))
+model.add(Dense(64, activation='relu', kernel_regularizer='l1_l2'))
 model.add(Dense(10, activation='softmax'))
 
 summary = model.summary()
