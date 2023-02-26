@@ -1,10 +1,11 @@
 # !/usr/bin/env python3.8
 # -*- coding:utf-8 -*-
-# @FileName  :call_back.py
-# @Time      :2023/2/26 上午11:26
+# @FileName  :dropout.py
+# @Time      :2023/2/22 下午11:40
 # @Author    :TaoistQu
 # Email      :qulei_20180331@163.com
-# description:
+# description: wide_deep
+
 import os
 import keras
 
@@ -41,10 +42,17 @@ x_valid_scaled = scaler.transform(x_valid)
 x_test_scaled = scaler.transform(x_test)
 
 #定义网络
-model = keras.models.Sequential([
-    keras.layers.Dense(32, activation='relu', input_shape=x_train.shape[1:]),
-    keras.layers.Dense(1)
-])
+#wide&deep模型就不能用Sequential来写
+#函数式API写法：即每一层都成一个函数来用
+
+input = keras.layers.Input(shape=x_train.shape[1:])
+hidden1 = keras.layers.Dense(32, activation='relu')(input)
+hidden2 = keras.layers.Dense(32, activation='relu')(hidden1)
+concat = keras.layers.concatenate([input, hidden2])
+output = keras.layers.Dense(1)(concat)
+
+##包装成一个model
+model = keras.models.Model(inputs=[input], outputs=output)
 
 summary = model.summary()
 #配置训练
