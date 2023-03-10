@@ -77,6 +77,6 @@ history = model.fit(train_dataset,
                     steps_per_epoch=x_train_scaled.shape[0] // batch_size,
                     epochs=30,
                     validation_data=eval_dataset)
-print(summary)
+
 test_dataset = make_dataset(x_test_scaled, y_test, 1, 32)
 model.evaluate(test_dataset)
