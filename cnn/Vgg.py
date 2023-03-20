@@ -10,7 +10,7 @@ import tensorflow as tf
 
 import keras
 from keras.layers import MaxPool2D,Conv2D,Input,Flatten,Dense,Dropout,Softmax
-from keras.models import Sequential
+from keras import Sequential
 import numpy as np
 import pandas as pd
 from keras import preprocessing
