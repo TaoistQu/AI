@@ -9,32 +9,33 @@
 
 import tensorflow as tf
 import keras
-from keras.layers import Input
+from keras.layers import Input, ZeroPadding2D, Conv2D, MaxPool2D, Flatten, Dropout, Dense, Softmax
+from keras.models import Model
 import pandas as pd
 from keras import preprocessing
 
 import this
 def AlexNet(im_height=224, im_width=224, num_class=1000):
     input_image = Input(shape=(im_height, im_width, 3), dtype=tf.float32)
-    x = keras.layers.ZeroPadding2D(((1, 2), (1, 2)))(input_image)
-    x = keras.layers.Conv2D(48, kernel_size=11, strides=4, activation='relu')(x)
-    x = keras.layers.MaxPool2D(pool_size=3, strides=2)(x)
-    x = keras.layers.Conv2D(128, kernel_size=5, padding='same', activation='relu')(x)
-    x = keras.layers.MaxPool2D(pool_size=3, strides=2)(x)
-    x = keras.layers.Conv2D(192, kernel_size=3, padding='same', activation='relu')(x)
+    x = ZeroPadding2D(((1, 2), (1, 2)))(input_image)
+    x = Conv2D(48, kernel_size=11, strides=4, activation='relu')(x)
+    x = MaxPool2D(pool_size=3, strides=2)(x)
+    x = Conv2D(128, kernel_size=5, padding='same', activation='relu')(x)
+    x = MaxPool2D(pool_size=3, strides=2)(x)
+    x = Conv2D(192, kernel_size=3, padding='same', activation='relu')(x)
     #x = keras.layers.Conv2D(192, kernel_size=3, padding='same', activation='relu')(x)
     #x = keras.layers.Conv2D(128, kernel_size=3, padding='same', activation='relu')(x)
-    x = keras.layers.MaxPool2D(pool_size=3, strides=2)(x)
+    x = MaxPool2D(pool_size=3, strides=2)(x)
 
-    x = keras.layers.Flatten()(x)
-    x = keras.layers.Dropout(0.4)(x)
-    x = keras.layers.Dense(1024, activation='relu')(x)
+    x = Flatten()(x)
+    x = Dropout(0.4)(x)
+    x = Dense(1024, activation='relu')(x)
     #x = keras.layers.Dropout(0.2)(x)
     #x = keras.layers.Dense(1024, activation='relu')(x)
-    x = keras.layers.Dense(num_class)(x)
-    predict = keras.layers.Softmax()(x)
+    x = Dense(num_class)(x)
+    predict = Softmax()(x)
 
-    model = keras.models.Model(inputs=input_image, outputs=predict)
+    model = Model(inputs=input_image, outputs=predict)
     return model
 
 
