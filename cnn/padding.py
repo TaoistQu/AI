@@ -12,8 +12,8 @@ import keras
 from keras import Sequential
 from keras.layers import Input, Conv2D, MaxPool2D
 
-
-#1、padding = valid  N = (W -F + 1) / S
+# N  = ((W - F + 2P ) / S) + 1
+#1、padding = valid  N = (W -F + 1) / S padding属于不补
 # W 为图片长宽， F 为卷积核的尺寸 ， S为步长
 model = Sequential([
     Input(shape=(8, 8, 3), dtype='float32'),
