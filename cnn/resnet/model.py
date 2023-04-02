@@ -1,6 +1,6 @@
 # !/usr/bin/env python3.8
 # -*- coding:utf-8 -*-
-# @FileName  :model.py
+# @FileName  :data_model.py
 # @Time      :2023/3/20 下午9:05
 # @Author    :TaoistQu
 # Email      :qulei_20180331@163.com
