@@ -20,6 +20,7 @@ Y.replace(-1, 0, inplace=True)
 
 X = torch.from_numpy(X.values).type(torch.FloatTensor)
 Y = torch.from_numpy(Y.values.reshape(-1, 1)).type(torch.FloatTensor)
+print(X.shape)
 
 model = nn.Sequential(
     nn.Linear(15, 512),
